@@ -10,7 +10,7 @@
         display: block;
         position: absolute;
         top: 25%;
-        right: 1%;
+        right: 0%;
         margin: 10% auto;
         transform: scale(5, 5);
         -webkit-transform: scale(5, 5);
@@ -31,23 +31,22 @@
             width: 20px;
             height: 20px;
             margin: -5px 0 0 -5px;
-            background-color: #2d4ba7;
+            background-color: #2161d8;
 
             .text {
                 color: white;
-                font-size: 3px;
+                font-size: 4px;
                 font-family: $Landing;
-                font-weight: 700;
                 position: absolute;
                 top: 42%;
-                left: 3%;
+                left: 0%;
                 transform: rotate(-90deg);
             }
         }
 
         .secondCircle {
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             margin: -9px 0 0 -9px;
             border: 1px solid white;
             animation: 2000ms pulseIn ease-in-out infinite;
@@ -89,9 +88,9 @@
         }
 
         .thirdCircle {
-            width: 34px;
-            height: 34px;
-            border: 1px solid rgb(22, 23, 97);
+            width: 36px;
+            height: 36px;
+            border: 1px solid #2161d8;
             margin: -13px 0 0 -13px;
             animation: 2000ms pulseIn 500ms ease-in-out infinite;
             -webkit-animation: 2000ms pulseIn 500ms ease-in-out infinite

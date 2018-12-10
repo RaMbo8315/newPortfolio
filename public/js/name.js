@@ -12,7 +12,7 @@ function init( font ) {
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 10000 );
     camera.position.z = 400;
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x000 );
+    scene.background = new THREE.Color( 0x668cff );
     uniforms = {
         amplitude: { value: 5.0 },
         opacity: { value: 0.3 },

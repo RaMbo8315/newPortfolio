@@ -16,7 +16,7 @@ export default class landing extends Component {
                 <Link to="/About">
                     <div className="pulsatingCircle">
                         <span className="firstCircle">
-                            <p className='text'>About Me</p>
+                            <p className='text'>About</p>
                         </span>
                         <span className="secondCircle"></span>
                         <span className="thirdCircle"></span>

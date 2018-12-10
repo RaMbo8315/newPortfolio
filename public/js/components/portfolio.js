@@ -103,37 +103,179 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ablout = function (_Component) {
-    _inherits(ablout, _Component);
+var about = function (_Component) {
+    _inherits(about, _Component);
 
-    function ablout() {
-        _classCallCheck(this, ablout);
+    function about() {
+        _classCallCheck(this, about);
 
-        var _this = _possibleConstructorReturn(this, (ablout.__proto__ || Object.getPrototypeOf(ablout)).call(this));
+        var _this = _possibleConstructorReturn(this, (about.__proto__ || Object.getPrototypeOf(about)).call(this));
 
         _this.state = {};
         return _this;
     }
 
-    _createClass(ablout, [{
+    _createClass(about, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
                 { id: 'About' },
                 _react2.default.createElement(
-                    'h5',
-                    null,
-                    'hello'
+                    'div',
+                    { className: 'container' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'chart' },
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'html', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/html5-64.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'HTML'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'css', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/css-64.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'CSS'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'javascript', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/javascript-64.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'Java',
+                                        _react2.default.createElement('br', null),
+                                        'Script'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'node', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/nodejs-64.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'Node',
+                                        _react2.default.createElement('br', null),
+                                        'js'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'react', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/react-64.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'React'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'mysql', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/mysql.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'MySQL'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'mongo', className: 'flex-space' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'top' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'infobox' },
+                                    _react2.default.createElement('img', { src: '/img/mongo-128.png' }),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'Mongo',
+                                        _react2.default.createElement('br', null),
+                                        'DB'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'bottom' })
+                        )
+                    )
                 )
             );
         }
     }]);
 
-    return ablout;
+    return about;
 }(_react.Component);
 
-exports.default = ablout;
+exports.default = about;
 
 /***/ }),
 
@@ -197,7 +339,7 @@ var landing = function (_Component) {
                             _react2.default.createElement(
                                 'p',
                                 { className: 'text' },
-                                'About Me'
+                                'About'
                             )
                         ),
                         _react2.default.createElement('span', { className: 'secondCircle' }),

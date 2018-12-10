@@ -3,12 +3,22 @@
 @import "variables";
 @import "reset";
 @import "landing";
+@import "About";
+
+* {
+  box-sizing: border-box;
+}
+
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #000;
+  background: white;
   padding: 0;
   margin: 0;
   overflow: hidden;
+
+  .container {
+    padding: 10px;
+  }
 }
 
