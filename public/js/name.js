@@ -28,7 +28,7 @@ function init( font ) {
     } );
     var geometry = new THREE.TextBufferGeometry( '       Henry Urena \n     Web Developer\n', {
         font: font,
-        size: 30,
+        size: 23,
         height: 10,
         curveSegments: 10,
         bevelThickness: 5,
@@ -52,16 +52,20 @@ function init( font ) {
     scene.add( object );
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth * 0.8, window.innerHeight * 0.8 );
     var container = document.getElementById( 'Landing' );
     container.appendChild( renderer.domElement );
+    var element = container.getElementsByTagName('canvas')[0];
+    element.style.position = 'absolute';
+    element.style.top = '10%';
+    element.style.left = '10%';
     //
     window.addEventListener( 'resize', onWindowResize, false );
 }
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = window.innerWidth * 0.8/ window.innerHeight * 0.8;
     camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth * 0.8, window.innerHeight * 0.8 );
 }
 function animate() {
     requestAnimationFrame( animate );

@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 247:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12,21 +12,23 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(16);
+var _react = __webpack_require__(11);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(62);
+var _reactDom = __webpack_require__(45);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouterDom = __webpack_require__(157);
 
-var _landing = __webpack_require__(252);
+var _reactTransitionGroup = __webpack_require__(593);
+
+var _landing = __webpack_require__(257);
 
 var _landing2 = _interopRequireDefault(_landing);
 
-var _about = __webpack_require__(251);
+var _about = __webpack_require__(256);
 
 var _about2 = _interopRequireDefault(_about);
 
@@ -56,12 +58,32 @@ var App = function (_Component) {
       return _react2.default.createElement(
         _reactRouterDom.BrowserRouter,
         null,
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _landing2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/About', component: _about2.default })
-        )
+        _react2.default.createElement(_reactRouterDom.Route, {
+          render: function render(_ref) {
+            var location = _ref.location;
+            return _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                _reactTransitionGroup.TransitionGroup,
+                null,
+                _react2.default.createElement(
+                  _reactTransitionGroup.CSSTransition,
+                  {
+                    key: location.key,
+                    timeout: 500,
+                    classNames: 'fade' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Switch,
+                    { location: location },
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _landing2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/About', component: _about2.default })
+                  )
+                )
+              )
+            );
+          }
+        })
       );
     }
   }]);
@@ -73,7 +95,7 @@ exports.default = App;
 
 /***/ }),
 
-/***/ 251:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85,11 +107,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(16);
+var _react = __webpack_require__(11);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(62);
+var _reactDom = __webpack_require__(45);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -111,6 +133,50 @@ var about = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (about.__proto__ || Object.getPrototypeOf(about)).call(this));
 
+        _this.switchExp = function () {
+            var expTitle = document.getElementsByClassName('exp')[0];
+            var famTitle = document.getElementsByClassName('fam')[0];
+            var bars = document.getElementsByClassName('bars')[0];
+            var familiar = document.getElementsByClassName('familiar')[0];
+            if (bars.style.display = 'none') {
+                famTitle.classList.remove("active");
+                familiar.style.display = 'none';
+                familiar.style.opacity = 0;
+                bars.style.display = 'grid';
+                bars.style.opacity = 1;
+                expTitle.classList.add("active");
+            } else {
+                famTitle.classList.add("active");
+                familiar.style.display = 'grid';
+                familiar.style.opacity = 1;
+                expTitle.classList.remove("active");
+                bars.style.display = 'none';
+                bars.style.opacity = 0;
+            }
+        };
+
+        _this.switchFam = function () {
+            var expTitle = document.getElementsByClassName('exp')[0];
+            var famTitle = document.getElementsByClassName('fam')[0];
+            var bars = document.getElementsByClassName('bars')[0];
+            var familiar = document.getElementsByClassName('familiar')[0];
+            if (familiar.style.display = 'none') {
+                bars.style.display = 'none';
+                bars.style.opacity = 0;
+                expTitle.classList.remove("active");
+                famTitle.classList.add("active");
+                familiar.style.display = 'grid';
+                familiar.style.opacity = 1;
+            } else {
+                expTitle.classList.add("active");
+                bars.style.display = 'grid';
+                bars.style.opacity = 1;
+                famTitle.classList.remove("active");
+                familiar.style.display = 'none';
+                familiar.style.opacity = 0;
+            }
+        };
+
         _this.state = {};
         return _this;
     }
@@ -126,145 +192,286 @@ var about = function (_Component) {
                     { className: 'container' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'chart' },
+                        { className: 'layout' },
                         _react2.default.createElement(
                             'div',
-                            { id: 'html', className: 'flex-space' },
+                            { className: 'me' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'top' },
+                                { className: 'info' },
                                 _react2.default.createElement(
-                                    'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/html5-64.png' }),
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'HTML'
-                                    )
+                                    'p',
+                                    { id: 'para' },
+                                    'bhbhbhbjhbjbljblkjbjhbkhhbjhbjhbljbjbl ghjgvhvbhbkh khbhbkbkjbhbljblbjk hbhvjhvkvbhbvkhvhvbhbvnmvbj,bhj,bjkvj, bhjkhgjh vjhmvhbvvbvnnbnbvgjh vjhcghxfgjgkh gkjbjnbjlkbnj'
                                 )
                             ),
-                            _react2.default.createElement('div', { className: 'bottom' })
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'image' },
+                                _react2.default.createElement('img', { src: '/img/me1.png' })
+                            )
                         ),
                         _react2.default.createElement(
                             'div',
-                            { id: 'css', className: 'flex-space' },
+                            { className: 'exp-section' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'top' },
+                                { className: 'exp-header' },
                                 _react2.default.createElement(
-                                    'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/css-64.png' }),
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'CSS'
-                                    )
+                                    'h1',
+                                    { className: 'exp active', onClick: this.switchExp },
+                                    'Experience'
+                                ),
+                                _react2.default.createElement(
+                                    'h1',
+                                    null,
+                                    '/'
+                                ),
+                                _react2.default.createElement(
+                                    'h1',
+                                    { className: 'fam', onClick: this.switchFam },
+                                    'Familiar'
                                 )
                             ),
-                            _react2.default.createElement('div', { className: 'bottom' })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'javascript', className: 'flex-space' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'top' },
+                                { className: 'familiar' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/javascript-64.png' }),
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'Java',
-                                        _react2.default.createElement('br', null),
-                                        'Script'
-                                    )
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/jquery-128.png' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/git-128.png' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/linux-128.png' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/seq-128.png' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/word-128.png' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/heroku-128.png' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'fam-img' },
+                                    _react2.default.createElement('img', { src: '/img/boot-128.png' })
                                 )
                             ),
-                            _react2.default.createElement('div', { className: 'bottom' })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'node', className: 'flex-space' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'top' },
+                                { className: 'bars' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/nodejs-64.png' }),
+                                    { id: 'html', className: 'flex-space' },
                                     _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'Node',
-                                        _react2.default.createElement('br', null),
-                                        'js'
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/html5-64.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'HTML'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '80%'
+                                        )
                                     )
-                                )
-                            ),
-                            _react2.default.createElement('div', { className: 'bottom' })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'react', className: 'flex-space' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'top' },
+                                ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/react-64.png' }),
+                                    { id: 'css', className: 'flex-space' },
                                     _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'React'
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/css-64.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'CSS'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '70%'
+                                        )
                                     )
-                                )
-                            ),
-                            _react2.default.createElement('div', { className: 'bottom' })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'mysql', className: 'flex-space' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'top' },
+                                ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/mysql.png' }),
+                                    { id: 'javascript', className: 'flex-space' },
                                     _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'MySQL'
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/javascript-64.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'JS'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '60%'
+                                        )
                                     )
-                                )
-                            ),
-                            _react2.default.createElement('div', { className: 'bottom' })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'mongo', className: 'flex-space' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'top' },
+                                ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'infobox' },
-                                    _react2.default.createElement('img', { src: '/img/mongo-128.png' }),
+                                    { id: 'node', className: 'flex-space' },
                                     _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'Mongo',
-                                        _react2.default.createElement('br', null),
-                                        'DB'
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/nodejs-64.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'Node'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '70%'
+                                        )
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { id: 'react', className: 'flex-space' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/react-64.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'React'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '50%'
+                                        )
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { id: 'mysql', className: 'flex-space' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/mysql.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'MySQL'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '35%'
+                                        )
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { id: 'mongo', className: 'flex-space' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'top' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'infobox' },
+                                            _react2.default.createElement('img', { src: '/img/mongo-64.png' }),
+                                            _react2.default.createElement(
+                                                'p',
+                                                null,
+                                                'Mongo'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement('div', { className: 'bottom' }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'percent' },
+                                        _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            '45%'
+                                        )
                                     )
                                 )
-                            ),
-                            _react2.default.createElement('div', { className: 'bottom' })
+                            )
                         )
                     )
                 )
@@ -279,7 +486,7 @@ exports.default = about;
 
 /***/ }),
 
-/***/ 252:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,11 +498,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(16);
+var _react = __webpack_require__(11);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(62);
+var _reactDom = __webpack_require__(45);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -357,21 +564,21 @@ exports.default = landing;
 
 /***/ }),
 
-/***/ 253:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(16);
+var _react = __webpack_require__(11);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(62);
+var _reactDom = __webpack_require__(45);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(247);
+var _App = __webpack_require__(251);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -383,4 +590,4 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), ap
 
 /***/ })
 
-},[253]);
+},[258]);

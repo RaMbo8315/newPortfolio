@@ -1,94 +1,202 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { divnk } from 'react-router-dom';
+import { link } from 'react-router-dom';
 
 export default class about extends Component {
     constructor() {
         super()
         this.state = {
-
+            
         }
     }
 
-    render() {
-        return (
-            <div id='About'>
-                <div className='container'>
-                    <div className="chart">
-                        <div id="html" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/html5-64.png' />
-                                    <p>HTML</p>
-                                </div>
+switchExp = () => {
+    var expTitle = document.getElementsByClassName('exp')[0];
+    var famTitle = document.getElementsByClassName('fam')[0];
+    var bars = document.getElementsByClassName('bars')[0];
+    var familiar = document.getElementsByClassName('familiar')[0];
+    if (bars.style.display = 'none') {
+        famTitle.classList.remove("active");
+        familiar.style.display = 'none';
+        familiar.style.opacity = 0;
+        bars.style.display = 'grid';
+        bars.style.opacity = 1;
+        expTitle.classList.add("active");
+    } else {
+        famTitle.classList.add("active");
+        familiar.style.display = 'grid';
+        familiar.style.opacity = 1;
+        expTitle.classList.remove("active");
+        bars.style.display = 'none';
+        bars.style.opacity = 0;
+    }
+}
+
+switchFam = () => {
+    var expTitle = document.getElementsByClassName('exp')[0];
+    var famTitle = document.getElementsByClassName('fam')[0];
+    var bars = document.getElementsByClassName('bars')[0];
+    var familiar = document.getElementsByClassName('familiar')[0];
+    if (familiar.style.display = 'none') {
+        bars.style.display = 'none';
+        bars.style.opacity = 0;
+        expTitle.classList.remove("active");
+        famTitle.classList.add("active");
+        familiar.style.display = 'grid'
+        familiar.style.opacity = 1
+    } else {
+        expTitle.classList.add("active");
+        bars.style.display = 'grid';
+        bars.style.opacity = 1;
+        famTitle.classList.remove("active");
+        familiar.style.display = 'none'
+        familiar.style.opacity = 0
+    }
+}
+
+render() {
+    return (
+        <div id='About'>
+            <div className='container'>
+                <div className='layout'>
+                    <div className='me'>
+                        <div className='info'>
+                            <p id='para'>bhbhbhbjhbjbljblkjbjhbkhhbjhbjhbljbjbl
+                            ghjgvhvbhbkh khbhbkbkjbhbljblbjk
+                            hbhvjhvkvbhbvkhvhvbhbvnmvbj,bhj,bjkvj,
+                            bhjkhgjh vjhmvhbvvbvnnbnbvgjh vjhcghxfgjgkh gkjbjnbjlkbnj</p>
+                        </div>
+                        <div className='image'>
+                            <img src='/img/me1.png' />
+                        </div>
+                    </div>
+                    <div className='exp-section'>
+                        <div className='exp-header'>
+                            <h1 className='exp active' onClick={this.switchExp}>Experience</h1>
+                            <h1>/</h1>
+                            <h1 className='fam' onClick={this.switchFam}>Familiar</h1>
+                        </div>
+                        <div className='familiar'>
+                            <div className="fam-img">
+                                <img src='/img/jquery-128.png' />
                             </div>
-                            <div className="bottom">
+                            <div className="fam-img">
+                                <img src='/img/git-128.png' />
+                            </div>
+                            <div className="fam-img">
+                                <img src='/img/linux-128.png' />
+                            </div>
+                            <div className="fam-img">
+                                <img src='/img/seq-128.png' />
+                            </div>
+                            <div className="fam-img">
+                                <img src='/img/word-128.png' />
+                            </div>
+                            <div className="fam-img">
+                                <img src='/img/heroku-128.png' />
+                            </div>
+                            <div className="fam-img">
+                                <img src='/img/boot-128.png' />
                             </div>
                         </div>
-                        <div id="css" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/css-64.png' />
-                                    <p>CSS</p>
+                        <div className="bars">
+                            <div id="html" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/html5-64.png' />
+                                        <p>HTML</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>80%</p>
                                 </div>
                             </div>
-                            <div className="bottom">
-                            </div>
-                        </div>
-                        <div id="javascript" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/javascript-64.png' />
-                                    <p>Java<br />Script</p>
+                            <div id="css" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/css-64.png' />
+                                        <p>CSS</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>70%</p>
                                 </div>
                             </div>
-                            <div className="bottom">
-                            </div>
-                        </div>
-                        <div id="node" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/nodejs-64.png' />
-                                    <p>Node<br />js</p>
+                            <div id="javascript" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/javascript-64.png' />
+                                        <p>JS</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>60%</p>
                                 </div>
                             </div>
-                            <div className="bottom">
-                            </div>
-                        </div>
-                        <div id="react" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/react-64.png' />
-                                    <p>React</p>
+                            <div id="node" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/nodejs-64.png' />
+                                        <p>Node</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>70%</p>
                                 </div>
                             </div>
-                            <div className="bottom">
-                            </div>
-                        </div>
-                        <div id="mysql" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/mysql.png' />
-                                    <p>MySQL</p>
+                            <div id="react" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/react-64.png' />
+                                        <p>React</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>50%</p>
                                 </div>
                             </div>
-                            <div className="bottom">
-                            </div>
-                        </div>
-                        <div id="mongo" className='flex-space'>
-                            <div className="top">
-                                <div className="infobox">
-                                    <img src='/img/mongo-128.png' />
-                                    <p>Mongo<br />DB</p>
+                            <div id="mysql" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/mysql.png' />
+                                        <p>MySQL</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>35%</p>
                                 </div>
                             </div>
-                            <div className="bottom">
+                            <div id="mongo" className='flex-space'>
+                                <div className="top">
+                                    <div className="infobox">
+                                        <img src='/img/mongo-64.png' />
+                                        <p>Mongo</p>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                </div>
+                                <div className="percent">
+                                    <p>45%</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+}
 }
 

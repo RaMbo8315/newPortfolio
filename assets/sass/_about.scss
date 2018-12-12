@@ -1,323 +1,393 @@
 #About {
-    background: #668cff;
-    width: 98vw;
-    height: 95vh;
-    margin: auto;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    overflow: hidden;
 
-    .chart {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: absolute;
-        bottom: 3%;
-        right: 2%;
-        height: 50%;
-        align-items: flex-end;
+    .layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 20px;
 
-        .flex-space {
-            flex: 1;
-            padding: 0 11px;
-        }
+        .me {
 
-        div.top {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
             justify-content: center;
+            align-items: center;
             text-align: center;
-            position: relative;
+            width: 50%;
             float: left;
-            margin-top: 5px;
-            width: 70px;
-            height: 30px;
-            border-radius: 200px/80px;
-            -moz-border-radius: 200px/80px;
-            -webkit-border-radius: 200px 80px;
 
-            div.infobox {
-                position: absolute;
-                bottom: 28%;
-
-                p {
-                    font-size: 20px;
+            .info {
+                #para {
                     color: white;
-                    font-weight: 300;
-                    font-family: $Landing;
-                    opacity: 1;
-                    text-shadow: 0px 5px 5px #111;
-                    -webkit-transition-property: opacity;
-                    -webkit-transition-duration: 500ms;
+                    font-size: 15px;
+                    font-family: $Content;
+                    font-weight: 400;
+                }
+            }
+
+            .image {
+                img {
+                    width: 50%;
                 }
             }
         }
 
-        div.bottom {
-            position: relative;
-            margin: 5px 0;
-            width: 70px;
-            height: 100px;
-            border-radius: 200px/80px;
-            -moz-border-radius: 200px/80px;
-            -webkit-border-radius: 200px 80px;
-            // background: -moz-linear-gradient(-90deg, #97a7a9, #b8cbcd);
-            // background: -webkit-gradient(linear, 0 top, 0 bottom, from(#97a7a9), to(#b8cbcd));
-            -webkit-transition-property: width;
-            -webkit-transition-duration: 500ms;
-            -moz-box-shadow: 0 10px 10px hsla(0, 0%, 0%, .2);
-            -webkit-box-shadow: 0 10px 30px hsla(0, 0%, 0%, .2);
-            box-shadow: 0 10px 30px hsla(0, 0%, 0%, .2);
-        }
-    }
-}
+        .exp-section {
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            justify-content: center;
+            text-align: center;
+            width: 50%;
+            float: left;
 
-#html {
+            .exp-header {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                text-align: center;
+                padding: 20px;
+                padding-bottom: 20px;
 
-    div.top {
-        z-index: 999;
-        background-color: #ff6c39;
-    }
+                .active {
+                    transform: rotate(0deg);
+                    text-shadow: 10px 10px 10px #111;
 
-    div.bottom {
-        z-index: 98;
-        height: 150px;
-        background: rgb(242, 106, 59);
-        background: -moz-linear-gradient(90deg, rgba(242, 106, 59, 1) 0%, rgba(252, 73, 11, 1) 35%, rgba(226, 61, 4, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(242, 106, 59, 1) 0%, rgba(252, 73, 11, 1) 35%, rgba(226, 61, 4, 1) 100%);
-        background: linear-gradient(90deg, rgba(242, 106, 59, 1) 0%, rgba(252, 73, 11, 1) 35%, rgba(226, 61, 4, 1) 100%);
-        animation:  growHtml 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 1s;
+                }
 
-        @keyframes growHtml{
-            0% {
-                height: 100px;
+                h1 {
+                    color: white;
+                    font-family: $Landing;
+                    font-size: 25px;
+                    font-weight: 600;
+                    text-shadow: 0px 5px 5px #111;
+                    transform: rotate(-7deg);
+                    cursor: pointer;
+
+                    &:nth-child(2) {
+                        position: relative;
+                        bottom: 10%;
+                        font-size: 35px;
+                        transform: rotate(0deg);
+                        cursor: default;
+
+                        &:hover {
+                            transform: rotate(0deg);
+                            text-shadow: 0px 5px 5px #111;
+                        }
+                    }
+
+                    &:hover {
+                        transform: rotate(0deg);
+                        text-shadow: 10px 10px 10px #111;
+                    }
+                }
             }
-            100% {
-                height: 200px;
+
+            .familiar {
+                display: none;
+                background: white;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px 30px;
+                padding: 60px 25px;
+                border-radius: 10px;
+                box-shadow: inset #000 3px 3px 20px 0px;
+
+                .fam-img {
+
+                    img {
+                        width: 90px;
+                    }
+                }
             }
-        }
 
-        &:hover {
-            z-index: 998;
-            height: 200px;
-        }
-    }
-}
+            .bars {
+                background: white;
+                padding: 30px 20px 40px 20px;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                border-radius: 10px;
+                box-shadow: inset #000 3px 3px 20px 0px;
 
-#css {
+                .flex-space {
+                    padding: 65px 8px 0;
+                    justify-content: center;
+                    align-items: end;
+                    text-align: center;
+                }
 
-    div.top {
-        z-index: 997;
-        background-color: #347dc6;
-    }
+                div.top {
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    position: relative;
+                    float: left;
+                    margin-top: 5px;
+                    width: 60px;
+                    height: 20px;
+                    border-radius: 200px/80px;
+                    -moz-border-radius: 200px/80px;
+                    -webkit-border-radius: 200px 80px;
 
-    div.bottom {
-        z-index: 96;
-        height: 200px;
-        background: rgb(56, 133, 221);
-        background: -moz-linear-gradient(90deg, rgba(56, 133, 221, 1) 0%, rgba(31, 98, 174, 1) 35%, rgba(4, 87, 182, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(56, 133, 221, 1) 0%, rgba(31, 98, 174, 1) 35%, rgba(4, 87, 182, 1) 100%);
-        background: linear-gradient(90deg, rgba(56, 133, 221, 1) 0%, rgba(31, 98, 174, 1) 35%, rgba(4, 87, 182, 1) 100%);
-        animation:  growCss 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 3s;
+                    div.infobox {
+                        position: absolute;
+                        bottom: 30%;
 
-        @keyframes growCss{
-            0% {
-                height: 100px;
+                        p {
+                            font-size: 15px;
+                            color: #e4e5e6;
+                            font-family: $Landing;
+                            text-shadow: 0px 5px 5px #111;
+                            -webkit-transition-property: opacity;
+                            -webkit-transition-duration: 500ms;
+                        }
+                    }
+                }
+
+                div.bottom {
+                    position: relative;
+                    margin: 5px 0;
+                    width: 60px;
+                    height: 50px;
+                    border-radius: 200px/80px;
+                    -moz-border-radius: 200px/80px;
+                    -webkit-border-radius: 200px 80px;
+                    // background: -moz-linear-gradient(-90deg, #97a7a9, #b8cbcd);
+                    // background: -webkit-gradient(linear, 0 top, 0 bottom, from(#97a7a9), to(#b8cbcd));
+                    -webkit-transition-property: width;
+                    -webkit-transition-duration: 500ms;
+                    -moz-box-shadow: 0 10px 10px hsla(0, 0%, 0%, .2);
+                    -webkit-box-shadow: 0 10px 30px hsla(0, 0%, 0%, .2);
+                    box-shadow: 0 10px 30px hsla(0, 0%, 0%, .2);
+                }
+
+                .percent {
+
+                    p {
+                        color: #668cff;
+                        font-size: 20px;
+                        font-family: $Landing;
+                        font-weight: 400;
+                        text-shadow: 0 10px 30px hsla(0, 0%, 0%, .2);
+                    }
+                }
             }
-            100% {
-                height: 250px;
+
+            #html {
+
+                div.top {
+                    z-index: 999;
+                    background-color: #ff6c39;
+                }
+
+                div.bottom {
+                    z-index: 98;
+                    height: 150px;
+                    background: rgb(242, 106, 59);
+                    background: -moz-linear-gradient(90deg, rgba(242, 106, 59, 1) 0%, rgba(252, 73, 11, 1) 35%, rgba(226, 61, 4, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(242, 106, 59, 1) 0%, rgba(252, 73, 11, 1) 35%, rgba(226, 61, 4, 1) 100%);
+                    background: linear-gradient(90deg, rgba(242, 106, 59, 1) 0%, rgba(252, 73, 11, 1) 35%, rgba(226, 61, 4, 1) 100%);
+                    animation: growHtml 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 1s;
+
+                    @keyframes growHtml {
+                        0% {
+                            height: 100px;
+                        }
+
+                        100% {
+                            height: 280px;
+                        }
+                    }
+                }
             }
-        }
 
-        &:hover {
-            z-index: 996;
-            height: 250px;
-        }
+            #css {
 
-    }
+                div.top {
+                    z-index: 997;
+                    background-color: #347dc6;
+                }
 
-}
+                div.bottom {
+                    z-index: 96;
+                    height: 200px;
+                    background: rgb(56, 133, 221);
+                    background: -moz-linear-gradient(90deg, rgba(56, 133, 221, 1) 0%, rgba(31, 98, 174, 1) 35%, rgba(4, 87, 182, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(56, 133, 221, 1) 0%, rgba(31, 98, 174, 1) 35%, rgba(4, 87, 182, 1) 100%);
+                    background: linear-gradient(90deg, rgba(56, 133, 221, 1) 0%, rgba(31, 98, 174, 1) 35%, rgba(4, 87, 182, 1) 100%);
+                    animation: growCss 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 3s;
 
-#javascript {
+                    @keyframes growCss {
+                        0% {
+                            height: 100px;
+                        }
 
-    div.top {
-        z-index: 995;
-        background-color: #efe18b;
-    }
+                        100% {
+                            height: 250px;
+                        }
+                    }
+                }
 
-    div.bottom {
-        z-index: 94;
-        height: 250px;
-        background: rgb(237, 221, 113);
-        background: -moz-linear-gradient(90deg, rgba(237, 221, 113, 1) 0%, rgba(240, 219, 79, 1) 35%, rgba(207, 181, 12, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(237, 221, 113, 1) 0%, rgba(240, 219, 79, 1) 35%, rgba(207, 181, 12, 1) 100%);
-        background: linear-gradient(90deg, rgba(237, 221, 113, 1) 0%, rgba(240, 219, 79, 1) 35%, rgba(207, 181, 12, 1) 100%);
-        animation:  growJs 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 5s;
-
-        @keyframes growJs{
-            from {
-                height: 100px;
             }
-            to {
-                height: 310px;
+
+            #javascript {
+
+                div.top {
+                    z-index: 995;
+                    background-color: #efe18b;
+                }
+
+                div.bottom {
+                    z-index: 94;
+                    height: 250px;
+                    background: rgb(237, 221, 113);
+                    background: -moz-linear-gradient(90deg, rgba(237, 221, 113, 1) 0%, rgba(240, 219, 79, 1) 35%, rgba(207, 181, 12, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(237, 221, 113, 1) 0%, rgba(240, 219, 79, 1) 35%, rgba(207, 181, 12, 1) 100%);
+                    background: linear-gradient(90deg, rgba(237, 221, 113, 1) 0%, rgba(240, 219, 79, 1) 35%, rgba(207, 181, 12, 1) 100%);
+                    animation: growJs 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 5s;
+
+                    @keyframes growJs {
+                        from {
+                            height: 100px;
+                        }
+
+                        to {
+                            height: 210px;
+                        }
+                    }
+                }
             }
-        }
 
-        &:hover {
-            z-index: 994;
-            height: 310px;
-        }
-    }
-}
+            #node {
 
-#node {
+                div.top {
+                    z-index: 993;
+                    background-color: #5eaf45;
+                }
 
-    div.top {
-        z-index: 993;
-        background-color: #5eaf45;
-    }
+                div.bottom {
+                    z-index: 92;
+                    height: 100px;
+                    background: rgb(122, 195, 119);
+                    background: -moz-linear-gradient(90deg, rgba(122, 195, 119, 1) 0%, rgba(65, 137, 62, 1) 35%, rgba(19, 102, 15, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(122, 195, 119, 1) 0%, rgba(65, 137, 62, 1) 35%, rgba(19, 102, 15, 1) 100%);
+                    background: linear-gradient(90deg, rgba(122, 195, 119, 1) 0%, rgba(65, 137, 62, 1) 35%, rgba(19, 102, 15, 1) 100%);
+                    animation: growNode 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 7s;
 
-    div.bottom {
-        z-index: 92;
-        height: 100px;
-        background: rgb(122, 195, 119);
-        background: -moz-linear-gradient(90deg, rgba(122, 195, 119, 1) 0%, rgba(65, 137, 62, 1) 35%, rgba(19, 102, 15, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(122, 195, 119, 1) 0%, rgba(65, 137, 62, 1) 35%, rgba(19, 102, 15, 1) 100%);
-        background: linear-gradient(90deg, rgba(122, 195, 119, 1) 0%, rgba(65, 137, 62, 1) 35%, rgba(19, 102, 15, 1) 100%);
-        animation:  growNode 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 7s;
+                    @keyframes growNode {
+                        from {
+                            height: 100px;
+                        }
 
-        @keyframes growNode{
-            from {
-                height: 100px;
+                        to {
+                            height: 250px;
+                        }
+                    }
+                }
+
             }
-            to {
-                height: 150px;
+
+            #react {
+
+                div.top {
+                    z-index: 991;
+                    background-color: #aaecf7;
+                }
+
+                div.bottom {
+                    z-index: 90;
+                    height: 120px;
+                    background: rgb(170, 236, 247);
+                    background: -moz-linear-gradient(90deg, rgba(170, 236, 247, 1) 0%, rgba(0, 216, 255, 1) 35%, rgba(1, 177, 209, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(170, 236, 247, 1) 0%, rgba(0, 216, 255, 1) 35%, rgba(1, 177, 209, 1) 100%);
+                    background: linear-gradient(90deg, rgba(170, 236, 247, 1) 0%, rgba(0, 216, 255, 1) 35%, rgba(1, 177, 209, 1) 100%);
+                    animation: growReact 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 9s;
+
+                    @keyframes growReact {
+                        from {
+                            height: 100px;
+                        }
+
+                        to {
+                            height: 180px;
+                        }
+                    }
+                }
             }
-        }
 
-        &:hover {
-            z-index: 992;
-            height: 150px;
-        }
-    }
+            #mysql {
 
-}
+                div.top {
+                    z-index: 991;
+                    background-color: rgba(232, 193, 130, 1);
+                }
 
-#react {
+                div.bottom {
+                    z-index: 90;
+                    height: 120px;
+                    background: rgb(232, 193, 130);
+                    background: -moz-linear-gradient(90deg, rgba(232, 193, 130, 1) 0%, rgba(228, 142, 0, 1) 35%, rgba(184, 115, 2, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(232, 193, 130, 1) 0%, rgba(228, 142, 0, 1) 35%, rgba(184, 115, 2, 1) 100%);
+                    background: linear-gradient(90deg, rgba(232, 193, 130, 1) 0%, rgba(228, 142, 0, 1) 35%, rgba(184, 115, 2, 1) 100%);
+                    animation: growSql 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 11s;
 
-    div.top {
-        z-index: 991;
-        background-color: #aaecf7;
-    }
+                    @keyframes growSql {
+                        from {
+                            height: 100px;
+                        }
 
-    div.bottom {
-        z-index: 90;
-        height: 120px;
-        background: rgb(170, 236, 247);
-        background: -moz-linear-gradient(90deg, rgba(170, 236, 247, 1) 0%, rgba(0, 216, 255, 1) 35%, rgba(1, 177, 209, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(170, 236, 247, 1) 0%, rgba(0, 216, 255, 1) 35%, rgba(1, 177, 209, 1) 100%);
-        background: linear-gradient(90deg, rgba(170, 236, 247, 1) 0%, rgba(0, 216, 255, 1) 35%, rgba(1, 177, 209, 1) 100%);
-        animation:  growReact 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 9s;
-
-        @keyframes growReact{
-            from {
-                height: 100px;
+                        to {
+                            height: 130px;
+                        }
+                    }
+                }
             }
-            to {
-                height: 170px;
+
+            #mongo {
+
+                div.top {
+                    z-index: 991;
+                    background-color: #8c7367;
+                }
+
+                div.bottom {
+                    z-index: 90;
+                    height: 120px;
+                    background: rgb(140, 115, 103);
+                    background: -moz-linear-gradient(90deg, rgba(140, 115, 103, 1) 0%, rgba(68, 45, 34, 1) 35%, rgba(46, 28, 19, 1) 100%);
+                    background: -webkit-linear-gradient(90deg, rgba(140, 115, 103, 1) 0%, rgba(68, 45, 34, 1) 35%, rgba(46, 28, 19, 1) 100%);
+                    background: linear-gradient(90deg, rgba(140, 115, 103, 1) 0%, rgba(68, 45, 34, 1) 35%, rgba(46, 28, 19, 1) 100%);
+                    animation: growMongo 2s ease;
+                    animation-direction: alternate;
+                    animation-fill-mode: both;
+                    animation-delay: 13s;
+
+                    @keyframes growMongo {
+                        from {
+                            height: 100px;
+                        }
+
+                        to {
+                            height: 150px;
+                        }
+                    }
+                }
             }
-        }
-
-        &:hover {
-            z-index: 990;
-            height: 170px;
-        }
-    }
-}
-
-#mysql {
-
-    div.top {
-        z-index: 991;
-        background-color: rgba(232, 193, 130, 1);
-    }
-
-    div.bottom {
-        z-index: 90;
-        height: 120px;
-        background: rgb(232, 193, 130);
-        background: -moz-linear-gradient(90deg, rgba(232, 193, 130, 1) 0%, rgba(228, 142, 0, 1) 35%, rgba(184, 115, 2, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(232, 193, 130, 1) 0%, rgba(228, 142, 0, 1) 35%, rgba(184, 115, 2, 1) 100%);
-        background: linear-gradient(90deg, rgba(232, 193, 130, 1) 0%, rgba(228, 142, 0, 1) 35%, rgba(184, 115, 2, 1) 100%);
-        animation:  growSql 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 11s;
-
-        @keyframes growSql{
-            from {
-                height: 100px;
-            }
-            to {
-                height: 170px;
-            }
-        }
-
-        &:hover {
-            z-index: 990;
-            height: 170px;
-        }
-    }
-}
-
-#mongo {
-
-    div.top {
-        z-index: 991;
-        background-color: #8c7367;
-    }
-
-    div.bottom {
-        z-index: 90;
-        height: 120px;
-        background: rgb(140, 115, 103);
-        background: -moz-linear-gradient(90deg, rgba(140, 115, 103, 1) 0%, rgba(68, 45, 34, 1) 35%, rgba(46, 28, 19, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(140, 115, 103, 1) 0%, rgba(68, 45, 34, 1) 35%, rgba(46, 28, 19, 1) 100%);
-        background: linear-gradient(90deg, rgba(140, 115, 103, 1) 0%, rgba(68, 45, 34, 1) 35%, rgba(46, 28, 19, 1) 100%);
-        animation:  growMongo 2s ease;
-        animation-direction: alternate;
-        animation-fill-mode: both;
-        animation-delay: 13s;
-
-        @keyframes growMongo{
-            from {
-                height: 100px;
-            }
-            to {
-                height: 170px;
-            }
-        }
-
-        &:hover {
-            z-index: 990;
-            height: 170px;
         }
     }
 }
