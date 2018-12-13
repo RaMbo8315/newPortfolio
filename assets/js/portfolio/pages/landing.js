@@ -10,10 +10,21 @@ export default class landing extends Component {
         }
     }
 
+    componentWillMount() {
+        var app = document.getElementById('app')
+        app.style.overflow = 'hidden'
+    }
+
     render() {
         return (
             <div id='Landing'>
                 <Link to="/About">
+                    <div className='group'>
+                        <div className='text'>
+                            <p className='name'>Henry Urena</p>
+                        </div>
+                        <div className='cover'></div>
+                    </div>
                     <div className="pulsatingCircle">
                         <span className="firstCircle">
                             <p className='text'>About</p>
